@@ -1,17 +1,17 @@
 'use client'
 
 import Link from 'next/link'
-import { Header } from './components/Header'
-import { GameCard } from './components/GameCard'
+import { Header } from '../components/Header'
+import { GameCard } from '../components/GameCard'
 import {
   getFeaturedGames,
   getTrendingGames,
-} from './lib/games-data'
-import { TOURNAMENTS as TOURNAMENT_DATA } from './lib/tournaments-data'
-import { useStore } from './store/useStore'
+} from '../lib/games-data'
+import { TOURNAMENTS as TOURNAMENT_DATA } from '../lib/tournaments-data'
+import { useStore } from '../store/useStore'
 import { useState } from 'react'
-import { TournamentJoinModal } from './components/TournamentJoinModal'
-import type { Tournament } from './lib/tournaments-data'
+import { TournamentJoinModal } from '../components/TournamentJoinModal'
+import type { Tournament } from '../lib/tournaments-data'
 
 export default function Home() {
   const { balance, joinTournament, joinedTournaments } = useStore()
