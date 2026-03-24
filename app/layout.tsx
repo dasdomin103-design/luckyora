@@ -12,11 +12,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-import { Providers } from "./components/Providers";
-import { LayoutWrapper } from "./components/LayoutWrapper";
-import { SoundProvider } from "./context/SoundContext";
-import { DemoModeBanner } from "./components/DemoModeBanner";
-import { ChatWidget } from "./components/ChatWidget";
+import { Providers } from "../components/Providers";
+import { LayoutWrapper } from "../components/LayoutWrapper";
+import { SoundProvider } from "../context/SoundContext";
+import { DemoModeBanner } from "../components/DemoModeBanner";
+import { ChatWidget } from "../components/ChatWidget";
 
 export const metadata: Metadata = {
   title: "Luckyora - Play & Win Real Rewards",
