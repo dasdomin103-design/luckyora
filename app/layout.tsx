@@ -17,6 +17,8 @@ import { LayoutWrapper } from "./components/LayoutWrapper";
 import { SoundProvider } from "./context/SoundContext";
 import { DemoModeBanner } from "./components/DemoModeBanner";
 import { ChatWidget } from "./components/ChatWidget";
+import { TrackingProvider } from "./components/TrackingProvider";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Luckyora - Play & Win Real Rewards",
@@ -34,13 +36,16 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-black`}
     >
       <body className="min-h-full flex flex-col bg-black text-white">
-        <SoundProvider>
-          <Providers>
-            <DemoModeBanner />
-            <LayoutWrapper>{children}</LayoutWrapper>
-            <ChatWidget />
-          </Providers>
-        </SoundProvider>
+        <TrackingProvider>
+          <SoundProvider>
+            <Providers>
+              <DemoModeBanner />
+              <LayoutWrapper>{children}</LayoutWrapper>
+              <ChatWidget />
+              <Footer />
+            </Providers>
+          </SoundProvider>
+        </TrackingProvider>
       </body>
     </html>
   );

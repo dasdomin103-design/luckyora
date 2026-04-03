@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:clean": "taskkill /F /IM node.exe /T 2>nul & next dev",
     "dev:server": "cd server && npm run dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.99.2",
+    "@supabase/supabase-js": "^2.100.1",
     "howler": "^2.2.4",
     "next": "16.2.0",
     "razorpay": "^2.9.6",
