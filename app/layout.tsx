@@ -2,51 +2,67 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-import { Providers } from "./components/Providers";
-import { LayoutWrapper } from "./components/LayoutWrapper";
-import { SoundProvider } from "./context/SoundContext";
-import { DemoModeBanner } from "./components/DemoModeBanner";
-import { ChatWidget } from "./components/ChatWidget";
-import { TrackingProvider } from "./components/TrackingProvider";
-import Footer from "./components/Footer";
+const isPreview = process.env.VERCEL_ENV !== "production";
+const baseUrl = "https://www.luckyora.live";
 
 export const metadata: Metadata = {
-  title: "Luckyora - Play & Win Real Rewards",
-  description: "Real-money gaming platform with tournaments and rewards",
-};
+  metadataBase: new URL(baseUrl),
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased bg-black`}
-    >
-      <body className="min-h-full flex flex-col bg-black text-white">
-        <TrackingProvider>
-          <SoundProvider>
-            <Providers>
-              <DemoModeBanner />
-              <LayoutWrapper>{children}</LayoutWrapper>
-              <ChatWidget />
-              <Footer />
-            </Providers>
-          </SoundProvider>
-        </TrackingProvider>
-      </body>
-    </html>
-  );
-}
+  title: {
+    default: "Luckyora - Play Skill Games & Win Real Rewards",
+    template: "%s | Luckyora",
+  },
+
+  description:
+    "Play skill-based games like Ludo & Carrom on Luckyora. Join tournaments, compete with real players, and win real rewards.",
+
+  keywords: [
+    "skill based games",
+    "real money games India",
+    "play and win",
+    "ludo online",
+    "carrom online",
+    "gaming tournaments India",
+  ],
+
+  alternates: {
+    canonical: baseUrl,
+  },
+
+  openGraph: {
+    title: "Luckyora - Play & Win Real Rewards",
+    description:
+      "Join Luckyora and compete in skill-based tournaments to win real rewards.",
+    url: baseUrl,
+    siteName: "Luckyora",
+    images: [
+      {
+        url: `${baseUrl}/og-image.png`, // add this image in /public
+        width: 1200,
+        height: 630,
+        alt: "Luckyora Gaming Platform",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Luckyora - Play & Win",
+    description:
+      "Skill-based gaming platform with real rewards and tournaments.",
+    images: [`${baseUrl}/og-image.png`],
+  },
+
+  robots: isPreview
+    ? {
+        index: false,
+        follow: false,
+        nocache: true,
+      }
+    : {
+        index: true,
+        follow: true,
+      },
+};
