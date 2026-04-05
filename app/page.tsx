@@ -1,4 +1,4 @@
-﻿'use client'
+'use client'
 
 import { useState } from 'react'
 import Link from 'next/link'
@@ -26,12 +26,18 @@ const TOURNAMENT_DATA = [
 ]
 
 export default function HomePage() {
-  const [selectedTournament, setSelectedTournament] = useState<typeof TOURNAMENT_DATA[0] | null>(null)
-  const [joinedTournaments, setJoinedTournaments] = useState<number[]>([])
+  const [selectedTournament, setSelectedTournament] = useState(null)
+  const [joinedTournaments, setJoinedTournaments] = useState([])
+
+  const buttonClass = (id) => {
+    if (joinedTournaments.includes(id)) {
+      return 'px-4 py-2 rounded-lg font-semibold text-sm bg-gray-700 text-gray-500'
+    }
+    return 'px-4 py-2 rounded-lg font-semibold text-sm bg-green-500 hover:bg-green-400 text-black'
+  }
 
   return (
     <main className="max-w-4xl mx-auto p-4">
-      {/* Header */}
       <section className="mb-6 text-center">
         <h1 className="text-3xl font-bold text-yellow-400 mb-2">
           Welcome to LuckyOra
@@ -41,10 +47,9 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Tournaments */}
       <section className="mb-6">
         <h2 className="text-lg font-semibold text-yellow-400 mb-3">
-          🏆 Active Tournaments
+          Active Tournaments
         </h2>
         <div className="space-y-4">
           {TOURNAMENT_DATA.slice(0, 2).map((t) => (
@@ -56,17 +61,17 @@ export default function HomePage() {
                 <div>
                   <h3 className="font-semibold">{t.name}</h3>
                   <p className="text-sm text-gray-400">
-                    Entry: ₹{t.entryFee} • Prize: ₹{t.prizePool}
+                    Entry: Rs.{t.entryFee} - Prize: Rs.{t.prizePool}
                   </p>
                   <p className="text-xs text-gray-500 mt-1">
-                    {t.playersJoined}/{t.maxPlayers} players • Starts in {t.startsIn}
+                    {t.playersJoined}/{t.maxPlayers} players - Starts in {t.startsIn}
                   </p>
                 </div>
 
                 <button
                   onClick={() => setSelectedTournament(t)}
                   disabled={joinedTournaments.includes(t.id)}
-                  className={\px-4 py-2 rounded-lg font-semibold text-sm \\}
+                  className={buttonClass(t.id)}
                 >
                   {joinedTournaments.includes(t.id) ? 'Joined' : 'Join Now'}
                 </button>
@@ -79,11 +84,10 @@ export default function HomePage() {
           href="/tournament"
           className="block text-center text-yellow-400 hover:underline mt-2"
         >
-          View all tournaments →
+          View all tournaments
         </Link>
       </section>
 
-      {/* Modal */}
       {selectedTournament && (
         <TournamentJoinModal
           tournament={selectedTournament}
