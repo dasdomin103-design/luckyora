@@ -24,6 +24,10 @@ function getDeviceType(ua: string) {
 }
 
 export async function POST(request: NextRequest) {
+  if (!supabaseAdmin) {
+    return NextResponse.json({ error: 'Database not configured' }, { status: 500 })
+  }
+
   try {
     const body = await request.json()
     const { sessionId, path, referrer } = body
