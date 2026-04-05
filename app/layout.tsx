@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
 
 const isPreview = process.env.VERCEL_ENV !== "production";
 const baseUrl = "https://www.luckyora.live";
@@ -37,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Luckyora",
     images: [
       {
-        url: `${baseUrl}/og-image.png`, // add this image in /public
+        url: `${baseUrl}/og-image.png`,
         width: 1200,
         height: 630,
         alt: "Luckyora Gaming Platform",
@@ -66,3 +77,18 @@ export const metadata: Metadata = {
         follow: true,
       },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        {children}
+        <SpeedInsights />
+      </body>
+    </html>
+  );
+}
