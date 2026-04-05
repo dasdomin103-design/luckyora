@@ -1,69 +1,44 @@
-'use client'
+﻿'use client'
 
-import Link from 'next/link'
-import { Header } from './components/Header'
-import { GameCard } from './components/GameCard'
-import {
-  getFeaturedGames,
-  getTrendingGames,
-} from './lib/games-data'
-import { TOURNAMENTS as TOURNAMENT_DATA } from './lib/tournaments-data'
-import { useStore } from './store/useStore'
 import { useState } from 'react'
-import { TournamentJoinModal } from './components/TournamentJoinModal'
-import type { Tournament } from './lib/tournaments-data'
-export default function Home() {
-  const { balance, joinTournament, joinedTournaments } = useStore()
-  const featured = getFeaturedGames()
-  const trending = getTrendingGames()
-  const [selectedTournament, setSelectedTournament] = useState<Tournament | null>(null)
+import Link from 'next/link'
+import TournamentJoinModal from '@/components/TournamentJoinModal'
+
+const TOURNAMENT_DATA = [
+  {
+    id: 1,
+    name: 'Weekend Warrior',
+    entryFee: 50,
+    prizePool: 5000,
+    maxPlayers: 100,
+    playersJoined: 67,
+    startsIn: '2h 15m'
+  },
+  {
+    id: 2,
+    name: 'Pro League Finals',
+    entryFee: 200,
+    prizePool: 50000,
+    maxPlayers: 50,
+    playersJoined: 43,
+    startsIn: '5h 30m'
+  }
+]
+
+export default function HomePage() {
+  const [selectedTournament, setSelectedTournament] = useState<typeof TOURNAMENT_DATA[0] | null>(null)
+  const [joinedTournaments, setJoinedTournaments] = useState<number[]>([])
+
   return (
-    <main className="min-h-screen bg-black text-white p-4">
-      <Header />
-      {/* Banner */}
-      <div className="bg-gradient-to-r from-purple-600 to-pink-500 p-5 rounded-xl mb-6">
-        <h2 className="text-xl font-bold">🔥 Play & Win Real Rewards</h2>
-        <p className="text-gray-200/90 mb-4">Join tournaments and earn coins</p>
-        <div className="flex gap-3">
-          <Link
-            href="/games"
-            className="bg-white text-purple-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-          >
-            Play Now
-          </Link>
-          <Link
-            href="/tournament"
-            className="bg-yellow-400 text-black px-4 py-2 rounded-lg font-semibold hover:bg-yellow-300 transition-colors"
-          >
-            Join Tournament
-          </Link>
-        </div>
-      </div>
-
-      {/* Featured Games */}
-      <section className="mb-6">
-        <h2 className="text-lg font-semibold text-yellow-400 mb-3">
-          ⭐ Featured Games
-        </h2>
-        <div className="grid grid-cols-2 gap-4">
-          {featured.map((game) => (
-            <GameCard key={game.id} game={game} size="lg" />
-          ))}
-        </div>
-      </section>
-
-      {/* Trending Games */}
-      <section className="mb-6">
-        <h2 className="text-lg font-semibold text-yellow-400 mb-3">
-          📈 Trending Games
-        </h2>
-        <div className="flex gap-4 overflow-x-auto pb-2 -mx-1">
-          {trending.map((game) => (
-            <div key={game.id} className="flex-shrink-0 w-[140px]">
-              <GameCard game={game} size="sm" />
-            </div>
-          ))}
-        </div>
+    <main className="max-w-4xl mx-auto p-4">
+      {/* Header */}
+      <section className="mb-6 text-center">
+        <h1 className="text-3xl font-bold text-yellow-400 mb-2">
+          Welcome to LuckyOra
+        </h1>
+        <p className="text-gray-400">
+          Win real money playing skill-based games
+        </p>
       </section>
 
       {/* Tournaments */}
@@ -91,11 +66,7 @@ export default function Home() {
                 <button
                   onClick={() => setSelectedTournament(t)}
                   disabled={joinedTournaments.includes(t.id)}
-                  className={`px-4 py-2 rounded-lg font-semibold text-sm ${
-                    joinedTournaments.includes(t.id)
-                      ? 'bg-gray-700 text-gray-500'
-                      : 'bg-green-500 hover:bg-green-400 text-black'
-                  }`}
+                  className={\px-4 py-2 rounded-lg font-semibold text-sm \\}
                 >
                   {joinedTournaments.includes(t.id) ? 'Joined' : 'Join Now'}
                 </button>
@@ -110,16 +81,16 @@ export default function Home() {
         >
           View all tournaments →
         </Link>
-        </section>
-{/* Modal */}
-{selectedTournament && (
-  <TournamentJoinModal
-    tournament={selectedTournament}
-    isOpen={true}
-    onClose={() => setSelectedTournament(null)}
-  />
-)}
+      </section>
 
-</main>
-)
+      {/* Modal */}
+      {selectedTournament && (
+        <TournamentJoinModal
+          tournament={selectedTournament}
+          isOpen={true}
+          onClose={() => setSelectedTournament(null)}
+        />
+      )}
+    </main>
+  )
 }
