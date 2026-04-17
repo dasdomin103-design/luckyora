@@ -31,10 +31,3 @@ export default function RootLayout({
     </html>
   );
 }
-        {children}
-        <SpeedInsights />
-      </body>
-    </html>
-  );
-}
->>>>>>> 994c0215f16eb5acfa3b2a8261dfa6df199416e7

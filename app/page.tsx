@@ -1,4 +1,4 @@
-<export default function Home() {
+export default function Home() {
   const games = [
     { name: '2048', url: 'https://play2048.co/' },
     { name: 'Snake', url: 'https://snake-game.js.org/' },
