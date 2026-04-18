@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 import { Trophy, Flame, Medal } from "lucide-react";
-import { LeaderboardEntry } from "../lib/supabase";
+type LeaderboardEntry = {
+  id: string;
+  username: string;
+  score: number;
+  game_slug: string;
+  created_at: string;
+};
 
 interface LeaderboardProps {
   entries: LeaderboardEntry[];
