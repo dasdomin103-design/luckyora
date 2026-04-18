@@ -1,3 +1,5 @@
+export const dynamic = "force-dynamic";
+
 import { getLeaderboard } from "../lib/supabase";
 import Leaderboard from "../components/Leaderboard";
 
@@ -16,13 +18,19 @@ export default async function LeaderboardPage() {
           </p>
         </div>
 
-        <Leaderboard entries={entries.length > 0 ? entries : [
-          { id: "1", username: "ProGamer123", score: 999999, game_slug: "2048", created_at: new Date().toISOString() },
-          { id: "2", username: "SpeedRunner", score: 875000, game_slug: "Tetris", created_at: new Date().toISOString() },
-          { id: "3", username: "PuzzleMaster", score: 750000, game_slug: "Sudoku", created_at: new Date().toISOString() },
-          { id: "4", username: "ArcadeKing", score: 620000, game_slug: "Pac-Man", created_at: new Date().toISOString() },
-          { id: "5", username: "StrategyPro", score: 580000, game_slug: "Chess", created_at: new Date().toISOString() },
-        ]} />
+        <Leaderboard
+          entries={
+            entries.length > 0
+              ? entries
+              : [
+                  { id: "1", username: "ProGamer123", score: 999999, game_slug: "2048", created_at: new Date().toISOString() },
+                  { id: "2", username: "SpeedRunner", score: 875000, game_slug: "Tetris", created_at: new Date().toISOString() },
+                  { id: "3", username: "PuzzleMaster", score: 750000, game_slug: "Sudoku", created_at: new Date().toISOString() },
+                  { id: "4", username: "ArcadeKing", score: 620000, game_slug: "Pac-Man", created_at: new Date().toISOString() },
+                  { id: "5", username: "StrategyPro", score: 580000, game_slug: "Chess", created_at: new Date().toISOString() },
+                ]
+          }
+        />
       </div>
     </div>
   );
