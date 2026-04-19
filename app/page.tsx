@@ -13,7 +13,7 @@ import AdBanner from "./components/AdBanner";
 import Footer from "./components/Footer";
 import ChatBot from "./components/ChatBot";
 import { games, Category } from "./data/games";
-import { LeaderboardEntry } from "./lib/supabase";
+
 
 // Mock leaderboard data (replace with real Supabase data)
 const mockLeaderboard: LeaderboardEntry[] = [
@@ -119,3 +119,4 @@ export default function Home() {
     </motion.main>
   );
 }
+import type { LeaderboardEntry } from "../lib/types";
