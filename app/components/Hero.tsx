@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 import { Gamepad2, Sparkles } from "lucide-react";
 
@@ -148,3 +147,4 @@ export default function Hero() {
     </section>
   );
 }
+

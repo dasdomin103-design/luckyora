@@ -1,5 +1,4 @@
 "use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send, Mail, MessageSquare } from "lucide-react";
@@ -132,3 +131,4 @@ export default function ContactPage() {
     </div>
   );
 }
+

@@ -1,6 +1,5 @@
-import { LeaderboardEntry } from '@/types/leaderboard'
 "use client";
-
+import { LeaderboardEntry } from '@/types/leaderboard'
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Search } from "lucide-react";
@@ -121,4 +120,5 @@ export default function Home() {
   );
 }
 import type { LeaderboardEntry } from "../lib/types";
+
 
