@@ -1,3 +1,4 @@
+import { LeaderboardEntry } from '@/types/leaderboard'
 "use client";
 
 import { useState, useMemo } from "react";
@@ -120,3 +121,4 @@ export default function Home() {
   );
 }
 import type { LeaderboardEntry } from "../lib/types";
+

@@ -1,14 +1,9 @@
+import { LeaderboardEntry } from '@/types/leaderboard'
 "use client";
 
 import { motion } from "framer-motion";
 import { Trophy, Flame, Medal } from "lucide-react";
-type LeaderboardEntry = {
-  id: string;
-  username: string;
-  score: number;
-  game_slug: string;
-  created_at: string;
-};
+;
 
 interface LeaderboardProps {
   entries: LeaderboardEntry[];
@@ -107,3 +102,5 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
     </section>
   );
 }
+
+
