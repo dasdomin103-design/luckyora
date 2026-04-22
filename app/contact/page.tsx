@@ -1,25 +1,19 @@
-export default function Contact() {
+ï»¿export default function ContactPage() {
   return (
-    <div className="p-6 text-white bg-black min-h-screen">
-      <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
+    <div className='min-h-screen flex items-center justify-center bg-black text-white'>
+      <div className='max-w-xl text-center'>
+        <h1 className='text-3xl font-bold mb-4'>Contact Us</h1>
+        <p className='text-gray-400 mb-6'>
+          Have questions or feedback? Reach out to us anytime.
+        </p>
 
-      <p className="mb-2">
-        Email:
-        <a href="mailto:luckyoralive@gmail.com" className="text-blue-400 ml-2">
-          luckyoralive@gmail.com
+        <a 
+          href='mailto:support@luckyora.live'
+          className='text-blue-400 underline'
+        >
+          support@luckyora.live
         </a>
-      </p>
-
-      <p className="mb-4">
-        Phone:
-        <a href="tel:+918369372112" className="text-blue-400 ml-2">
-          +91 8369372112
-        </a>
-      </p>
-
-      <p className="text-gray-400">
-        We usually respond within 24–48 hours.
-      </p>
+      </div>
     </div>
   );
 }
