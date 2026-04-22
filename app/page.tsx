@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { LeaderboardEntry } from '@/types/leaderboard'
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
@@ -120,5 +120,6 @@ export default function Home() {
   );
 }
 import type { LeaderboardEntry } from "../lib/types";
+
 
 

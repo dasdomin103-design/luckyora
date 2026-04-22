@@ -1,4 +1,4 @@
-export interface Game {
+﻿export interface Game {
   slug: string;
   title: string;
   category: "Arcade" | "Puzzle" | "Strategy" | "Action" | "Multiplayer";
@@ -255,3 +255,4 @@ export const games: Game[] = [
 export const categories = ["All", "Arcade", "Puzzle", "Strategy", "Action", "Multiplayer"] as const;
 
 export type Category = (typeof categories)[number];
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { Gamepad2, Github, Twitter, Instagram, Youtube } from "lucide-react";
 
@@ -69,14 +69,15 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} Luckyora. All rights reserved.
+            Â© {new Date().getFullYear()} Luckyora. All rights reserved.
           </p>
           <p className="text-slate-600 text-sm">
-            Made with ❤️ for gamers worldwide
+            Made with â¤ï¸ for gamers worldwide
           </p>
         </div>
       </div>
     </footer>
   );
 }
+
 

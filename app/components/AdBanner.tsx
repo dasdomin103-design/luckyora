@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 export default function AdBanner() {
   return (
     <div className="py-8 bg-slate-950">
@@ -18,4 +18,5 @@ export default function AdBanner() {
     </div>
   );
 }
+
 

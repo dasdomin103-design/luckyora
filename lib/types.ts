@@ -1,4 +1,4 @@
-export interface User {
+﻿export interface User {
   id: string;
   name: string;
   email: string;
@@ -66,4 +66,5 @@ export interface Tournament {
   winner?: User;
   createdAt: string;
 }
+
 

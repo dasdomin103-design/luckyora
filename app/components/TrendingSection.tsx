@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import { Flame, ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
@@ -80,4 +80,5 @@ export default function TrendingSection() {
     </section>
   );
 }
+
 

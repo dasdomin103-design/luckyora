@@ -1,4 +1,4 @@
-import { createServerClient } from '@supabase/ssr'
+﻿import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 
 export async function getLeaderboard(limit = 10) {
@@ -26,3 +26,4 @@ export async function getLeaderboard(limit = 10) {
 
   return data;
 }
+

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { LeaderboardEntry } from '@/types/leaderboard'
 import { motion } from "framer-motion";
 import { Trophy, Flame, Medal } from "lucide-react";
@@ -101,6 +101,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
     </section>
   );
 }
+
 
 
 

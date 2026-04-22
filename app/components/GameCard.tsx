@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import { Play, Users, TrendingUp } from "lucide-react";
 import Link from "next/link";
@@ -86,4 +86,5 @@ export default function GameCard({ game, index = 0 }: GameCardProps) {
     </motion.div>
   );
 }
+
 

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import { Zap, Gamepad2, Brain, Smartphone } from "lucide-react";
 
@@ -77,4 +77,5 @@ export default function Features() {
     </section>
   );
 }
+
 

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import { Gamepad2, Sparkles } from "lucide-react";
 
@@ -120,7 +120,7 @@ export default function Hero() {
           {[
             { value: "100+", label: "Free Games" },
             { value: "1M+", label: "Players" },
-            { value: "4.9★", label: "Rating" },
+            { value: "4.9â˜…", label: "Rating" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-white">{stat.value}</div>
@@ -147,4 +147,5 @@ export default function Hero() {
     </section>
   );
 }
+
 

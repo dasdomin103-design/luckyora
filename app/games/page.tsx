@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 const games = [
   { name: "Subway Surfers", url: "https://www.crazygames.com/game/subway-surfers" },
@@ -39,3 +39,4 @@ export default function GamesPage() {
     </div>
   );
 }
+

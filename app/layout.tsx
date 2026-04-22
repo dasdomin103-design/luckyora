@@ -1,4 +1,4 @@
-import "./globals.css";
+﻿import "./globals.css";
 import Footer from "@/components/Footer";
 import AnalyticsTracker from "@/components/AnalyticsTracker";
 import { GoogleAnalytics } from "@next/third-parties/google";

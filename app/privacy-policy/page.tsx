@@ -1,4 +1,4 @@
-export default function PrivacyPage() {
+﻿export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-slate-950 py-20">
       <div className="max-w-3xl mx-auto px-4">
@@ -68,3 +68,4 @@ export default function PrivacyPage() {
     </div>
   );
 }
+

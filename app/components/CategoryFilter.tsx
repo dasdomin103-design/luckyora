@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { motion } from "framer-motion";
 import { categories, Category } from "../data/games";
 
@@ -39,4 +39,5 @@ export default function CategoryFilter({ activeCategory, onCategoryChange }: Cat
     </div>
   );
 }
+
 
