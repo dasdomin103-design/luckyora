@@ -1,14 +1,15 @@
-﻿import { redis } from '@/lib/redis';
+import { NextResponse } from 'next/server'
+import { redis } from '@/lib/redis'
 
-export async function POST() {
-  const now = Date.now();
+export async function GET() {
+  const now = Date.now()
 
   await redis.zadd('online_users', {
     score: now,
     member: ${now}-,
-  });
+  })
 
-  await redis.zremrangebyscore('online_users', 0, now - 300000);
+  await redis.zremrangebyscore('online_users', 0, now - 300000)
 
-  return Response.json({ success: true });
+  return NextResponse.json({ success: true })
 }
