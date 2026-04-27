@@ -46,7 +46,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
 
               return (
                 <motion.div
-                  key={entry.id}
+                  key={entry?.id || index}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -101,6 +101,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
     </section>
   );
 }
+
 
 
 
