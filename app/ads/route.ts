@@ -1,25 +1,17 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
+// app/ads/route.ts
 
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
+export const dynamic = "force-static";
+
+export async function GET() {
+  return new Response(
+    "google.com, pub-3750799809258319, DIRECT, f08c47fec0942fa0",
+    {
+      headers: {
+        "Content-Type": "text/plain; charset=utf-8",
       },
-    ],
-  },
+    }
+  );
+}
 
-  async redirects() {
-    return [
-      {
-        source: "/ads.txt",
-        destination: "/ads",
-        permanent: true,
-      },
-    ];
-  },
-};
-
-module.exports = nextConfig;
+// 👇 Ensures TypeScript treats this as a module (fixes your build error)
+export {};
