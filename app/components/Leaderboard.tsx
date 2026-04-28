@@ -2,7 +2,6 @@
 import { LeaderboardEntry } from '@/types/leaderboard'
 import { motion } from "framer-motion";
 import { Trophy, Flame, Medal } from "lucide-react";
-;
 
 interface LeaderboardProps {
   entries: LeaderboardEntry[];
@@ -46,7 +45,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
 
               return (
                 <motion.div
-                  key={entry?.id || index}
+                  key={index}  // ✅ FIXED HERE
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -62,7 +61,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
                     {rank}
                   </div>
 
-                  {/* Avatar Placeholder */}
+                  {/* Avatar */}
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white font-bold">
                     {entry.username.charAt(0).toUpperCase()}
                   </div>
@@ -82,7 +81,9 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
 
                   {/* Score */}
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-white">{entry.score.toLocaleString()}</div>
+                    <div className="text-2xl font-bold text-white">
+                      {entry.score.toLocaleString()}
+                    </div>
                     <div className="text-slate-500 text-xs">points</div>
                   </div>
 
@@ -101,8 +102,3 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
     </section>
   );
 }
-
-
-
-
-
