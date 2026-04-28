@@ -10,16 +10,6 @@ const nextConfig = {
       },
     ],
   },
-
-  async redirects() {
-    return [
-      {
-        source: "/ads.txt",
-        destination: "/ads",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;
