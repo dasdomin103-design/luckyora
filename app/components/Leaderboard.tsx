@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 import { LeaderboardEntry } from '@/types/leaderboard'
 import { motion } from "framer-motion";
 import { Trophy, Flame, Medal } from "lucide-react";
@@ -45,7 +45,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
 
               return (
                 <motion.div
-                  key={index}  // ✅ FIXED HERE
+                  key={index}  // ? FIXED HERE
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
@@ -76,7 +76,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
                         </span>
                       )}
                     </div>
-                    <div className="text-slate-500 text-sm">{entry.game_slug}</div>
+                    <div className="text-slate-500 text-sm">{entry.username}</div>
                   </div>
 
                   {/* Score */}
