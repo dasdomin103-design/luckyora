@@ -1,0 +1,5 @@
+# Google AdSense – verified publisher ID
+google.com, pub-3750799809258319, DIRECT, f08c47fec0942fa0
+
+# GameDistribution – replace YOUR_GD_ID with the ID from your confirmation email
+gamedistribution.com, YOUR_GD_ID, DIRECT
