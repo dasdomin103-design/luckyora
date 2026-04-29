@@ -82,7 +82,7 @@ export default function Leaderboard({ entries }: LeaderboardProps) {
                   {/* Score */}
                   <div className="text-right">
                     <div className="text-2xl font-bold text-white">
-                      {entry.score.toLocaleString()}
+                      {entry.coins.toLocaleString()}
                     </div>
                     <div className="text-slate-500 text-xs">points</div>
                   </div>
