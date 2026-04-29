@@ -13,10 +13,22 @@ export const metadata = {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        {/* ✅ AdSense Verification Script (REQUIRED) */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3750799809258319"
+          crossOrigin="anonymous"
+        ></script>
+      </head>
+
       <body className="bg-black text-white">
         {children}
         <Footer />
+
+        {/* Google Analytics */}
         <GoogleAnalytics gaId="G-D8DCSL5DPE" />
+
         <AnalyticsTracker />
       </body>
     </html>
